@@ -1,9 +1,12 @@
+name: CI
+
+permissions:
+  contents: read
+
 on:
   push:
     branches: [ main ]
   pull_request:
-
-name: CI
 
 jobs:
   rustfmt:
