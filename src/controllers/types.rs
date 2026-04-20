@@ -10,8 +10,8 @@ use pulse::{
     volume::{ChannelVolumes, Volume},
 };
 
-/// These structs are direct representations of what libpulse_binding gives
-/// created to be copyable / cloneable for use in and out of callbacks
+// These structs are direct representations of what libpulse_binding gives
+// created to be copyable / cloneable for use in and out of callbacks.
 
 /// This is a wrapper around SinkPortInfo and SourcePortInfo as they have the same members
 #[derive(Debug, Clone)]
@@ -83,7 +83,7 @@ pub enum DevState {
     Suspended = 2,
 }
 
-impl<'a> From<def::SourceState> for DevState {
+impl From<def::SourceState> for DevState {
     fn from(s: def::SourceState) -> Self {
         match s {
             def::SourceState::Idle => DevState::Idle,
@@ -94,7 +94,7 @@ impl<'a> From<def::SourceState> for DevState {
     }
 }
 
-impl<'a> From<def::SinkState> for DevState {
+impl From<def::SinkState> for DevState {
     fn from(s: def::SinkState) -> Self {
         match s {
             def::SinkState::Idle => DevState::Idle,
