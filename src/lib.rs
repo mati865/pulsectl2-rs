@@ -39,7 +39,7 @@ pub mod controllers;
 mod error;
 
 use pulse::{
-    context::{introspect::Introspector, Context},
+    context::{Context, introspect::Introspector},
     mainloop::standard::{IterateResult, Mainloop},
     operation::{Operation, State},
     proplist::Proplist,
